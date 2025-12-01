@@ -1,0 +1,1547 @@
+[
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "historical migrations have exceeded base estimates",
+          "tag": "migration"
+        },
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        },
+        {
+          "reason": "little team knowledge of this area",
+          "tag": "unfamiliar-subsystem"
+        }
+      ],
+      "item_id": "SYN-101",
+      "notes": "similar migration work has historically exceeded base estimates",
+      "points": 2
+    },
+    "item_id": "SYN-101",
+    "outcome": {
+      "actual_points": 3,
+      "elapsed_days": 2.8,
+      "engineering_days": 1.5,
+      "item_id": "SYN-101",
+      "override": {
+        "corrected_estimate": 3,
+        "reason": "underestimated the amount of cleanup the cutover required"
+      }
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Old jobs are disabled only after the new job passes monitoring checks",
+        "Rollback procedure is documented and exercised once",
+        "No gap or duplication in processed records across the cutover"
+      ],
+      "description": "The existing jobs run on the legacy scheduler and are removed only after the replacement runs cleanly for a week. The new pipeline reads the same source tables and produces byte-compatible output files. The migration runs as a series of small cutovers to keep rollback cheap. Historical data is replayed into the new system before the switch.",
+      "item_id": "SYN-101",
+      "sprint": 1,
+      "summary": "Migrate billing export jobs off the legacy scheduler"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        },
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        },
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        }
+      ],
+      "item_id": "SYN-102",
+      "notes": "implementation appears small; uncertainty is in the integration",
+      "points": 8
+    },
+    "item_id": "SYN-102",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 6.9,
+      "engineering_days": 2.6,
+      "item_id": "SYN-102"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Schema change ships in the jointly agreed window",
+        "Both teams approve before merge",
+        "Deprecation notice is posted and acknowledged",
+        "No consumer breaks in the release following the change"
+      ],
+      "description": "The rollout must line up with the mobile release train. Reviews from two other teams are required before merge.",
+      "item_id": "SYN-102",
+      "sprint": 1,
+      "summary": "Align the API deprecation timeline with the mobile team"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "routine change on well-known code",
+          "tag": "familiar-application"
+        }
+      ],
+      "item_id": "SYN-103",
+      "notes": "implementation is small and the code is well known",
+      "points": 3
+    },
+    "item_id": "SYN-103",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 4.9,
+      "engineering_days": 0.8,
+      "item_id": "SYN-103"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Page passes the existing visual regression checks",
+        "Export respects the selected range on empty and boundary values"
+      ],
+      "description": "The dashboard code follows the established widget pattern and is well understood. The change reuses the existing table component and only adds new columns.",
+      "item_id": "SYN-103",
+      "sprint": 1,
+      "summary": "Add a column set to the admin dashboard"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        },
+        {
+          "reason": "little team knowledge of this area",
+          "tag": "unfamiliar-subsystem"
+        },
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        }
+      ],
+      "item_id": "SYN-104",
+      "notes": "confidence reflects how settled the requirements are",
+      "points": 3
+    },
+    "item_id": "SYN-104",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 4.4,
+      "engineering_days": 0.8,
+      "item_id": "SYN-104"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Runbook is updated for the new behaviour",
+        "New alerts fire on the failure modes the change could cause"
+      ],
+      "description": "The rollout window is coordinated with the support rotation. The change needs a canary rollout and a fast rollback path.",
+      "item_id": "SYN-104",
+      "sprint": 1,
+      "summary": "Update the deployment script for the frontend bundle"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "low",
+      "factors": [
+        {
+          "reason": "third-party behaviour is outside the team's control",
+          "tag": "external-dependency"
+        }
+      ],
+      "item_id": "SYN-105",
+      "notes": "schedule risk sits mostly with the provider",
+      "points": 3
+    },
+    "item_id": "SYN-105",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 5.7,
+      "engineering_days": 0.9,
+      "item_id": "SYN-105",
+      "override": {
+        "corrected_estimate": 2,
+        "reason": "the provider sandbox behaved differently than documented"
+      }
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Webhooks verify signatures and ignore unknown event types",
+        "Sandbox end-to-end flow passes"
+      ],
+      "description": "The geocoding API has known quirks around ambiguous addresses. Webhook payloads must be verified against the provider signing scheme. Failures must degrade gracefully while the provider is unreachable.",
+      "item_id": "SYN-105",
+      "sprint": 1,
+      "summary": "Integrate the payments provider webhooks"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        }
+      ],
+      "item_id": "SYN-106",
+      "notes": "implementation appears small; uncertainty is in the integration",
+      "points": 3
+    },
+    "item_id": "SYN-106",
+    "outcome": {
+      "actual_points": 3,
+      "elapsed_days": 5.5,
+      "engineering_days": 1.7,
+      "item_id": "SYN-106"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Findings are written up with a recommendation",
+        "No production traffic is touched",
+        "Prototype records and replays a session from the demo dataset"
+      ],
+      "description": "Findings matter more than the implementation quality. The approach is uncertain and the first version is expected to be thrown away. The prototype only needs to work for the demo dataset. No comparable feature exists in the codebase yet.",
+      "item_id": "SYN-106",
+      "sprint": 2,
+      "summary": "Explore the streaming ingestion path for analytics events"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "historical migrations have exceeded base estimates",
+          "tag": "migration"
+        }
+      ],
+      "item_id": "SYN-107",
+      "notes": "similar migration work has historically exceeded base estimates",
+      "points": 3
+    },
+    "item_id": "SYN-107",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 5.6,
+      "engineering_days": 2.4,
+      "item_id": "SYN-107"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Replacement job produces identical output for a seeded week of history",
+        "No gap or duplication in processed records across the cutover",
+        "Old jobs are disabled only after the new job passes monitoring checks",
+        "Rollback procedure is documented and exercised once"
+      ],
+      "description": "The migration runs as a series of small cutovers to keep rollback cheap. The existing jobs run on the legacy scheduler and are removed only after the replacement runs cleanly for a week. Historical data is replayed into the new system before the switch.",
+      "item_id": "SYN-107",
+      "sprint": 2,
+      "summary": "Move the customer import pipeline to the new data platform"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        },
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        }
+      ],
+      "item_id": "SYN-108",
+      "notes": "implementation appears small; uncertainty is in the integration",
+      "points": 5
+    },
+    "item_id": "SYN-108",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 3.0,
+      "engineering_days": 2.4,
+      "item_id": "SYN-108"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Decision is recorded with the chosen edge-case behaviour",
+        "Implementation follows the recorded decision",
+        "Open questions are captured with owners"
+      ],
+      "description": "The ticket has been rewritten twice and may still change. The implementation is deferred until the decision is recorded.",
+      "item_id": "SYN-108",
+      "sprint": 2,
+      "summary": "Resolve the conflicting requirements for the search ranking"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "routine change on well-known code",
+          "tag": "familiar-application"
+        },
+        {
+          "reason": "little team knowledge of this area",
+          "tag": "unfamiliar-subsystem"
+        }
+      ],
+      "item_id": "SYN-109",
+      "notes": "implementation is small and the code is well known",
+      "points": 3
+    },
+    "item_id": "SYN-109",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 3.9,
+      "engineering_days": 1.1,
+      "item_id": "SYN-109"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "New columns render with the existing sort and filter behaviour",
+        "No changes to the public API surface",
+        "Export respects the selected range on empty and boundary values",
+        "Page passes the existing visual regression checks"
+      ],
+      "description": "No new dependencies or services are involved. The settings page uses the shared form styles with minor overrides.",
+      "item_id": "SYN-109",
+      "sprint": 2,
+      "summary": "Extend the report export with an optional date range"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        }
+      ],
+      "item_id": "SYN-110",
+      "notes": "estimate follows the historical pattern for this kind of work",
+      "points": 2
+    },
+    "item_id": "SYN-110",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 2.3,
+      "engineering_days": 1.1,
+      "item_id": "SYN-110"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "No consumer breaks in the release following the change",
+        "Schema change ships in the jointly agreed window",
+        "Deprecation notice is posted and acknowledged"
+      ],
+      "description": "Part of the work is waiting on another team's availability. The rollout must line up with the mobile release train.",
+      "item_id": "SYN-110",
+      "sprint": 2,
+      "summary": "Align the API deprecation timeline with the mobile team"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "low",
+      "factors": [
+        {
+          "reason": "third-party behaviour is outside the team's control",
+          "tag": "external-dependency"
+        }
+      ],
+      "item_id": "SYN-111",
+      "notes": "schedule risk sits mostly with the provider",
+      "points": 5
+    },
+    "item_id": "SYN-111",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 5.5,
+      "engineering_days": 2.2,
+      "item_id": "SYN-111"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Provider outage degrades to queued retries without data loss",
+        "Sandbox end-to-end flow passes",
+        "Rate-limit responses back off and retry"
+      ],
+      "description": "The geocoding API has known quirks around ambiguous addresses. Failures must degrade gracefully while the provider is unreachable. The provider sandbox is available but the rate limits are not fully documented. The notification service may change its payload shape between releases.",
+      "item_id": "SYN-111",
+      "sprint": 3,
+      "summary": "Adopt the new geocoding service for address lookups"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        },
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        },
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        }
+      ],
+      "item_id": "SYN-112",
+      "notes": "confidence reflects how settled the requirements are",
+      "points": 5
+    },
+    "item_id": "SYN-112",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 4.7,
+      "engineering_days": 2.1,
+      "item_id": "SYN-112"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Rollback is verified in staging before the change ships",
+        "Runbook is updated for the new behaviour",
+        "New alerts fire on the failure modes the change could cause",
+        "Canary rollout shows no increase in retry errors"
+      ],
+      "description": "Observability is added before the behaviour changes. The worker runs unattended and a mistake could retry payments. The change needs a canary rollout and a fast rollback path. The deployment script is exercised against the staging environment first.",
+      "item_id": "SYN-112",
+      "sprint": 3,
+      "summary": "Update the deployment script for the frontend bundle"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-101",
+        "SYN-107"
+      ],
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "historical migrations have exceeded base estimates",
+          "tag": "migration"
+        }
+      ],
+      "item_id": "SYN-113",
+      "notes": "similar migration work has historically exceeded base estimates",
+      "points": 5
+    },
+    "item_id": "SYN-113",
+    "outcome": {
+      "actual_points": 8,
+      "elapsed_days": 5.0,
+      "engineering_days": 4.7,
+      "item_id": "SYN-113"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Replacement job produces identical output for a seeded week of history",
+        "Old jobs are disabled only after the new job passes monitoring checks",
+        "Rollback procedure is documented and exercised once"
+      ],
+      "description": "The new pipeline reads the same source tables and produces byte-compatible output files. Historical data is replayed into the new system before the switch. Several downstream consumers read the current output format and are switched after the cutover. The existing jobs run on the legacy scheduler and are removed only after the replacement runs cleanly for a week.",
+      "item_id": "SYN-113",
+      "sprint": 3,
+      "summary": "Rebuild the search index on the current stack and retire the old one"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        },
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        }
+      ],
+      "item_id": "SYN-114",
+      "notes": "estimate follows the historical pattern for this kind of work",
+      "points": 8
+    },
+    "item_id": "SYN-114",
+    "outcome": {
+      "actual_points": 8,
+      "elapsed_days": 8.5,
+      "engineering_days": 4.5,
+      "item_id": "SYN-114"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Both teams approve before merge",
+        "Schema change ships in the jointly agreed window",
+        "Deprecation notice is posted and acknowledged",
+        "No consumer breaks in the release following the change"
+      ],
+      "description": "Reviews from two other teams are required before merge. The rollout must line up with the mobile release train. The change touches a schema owned by another team. Part of the work is waiting on another team's availability.",
+      "item_id": "SYN-114",
+      "sprint": 3,
+      "summary": "Align the API deprecation timeline with the mobile team"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-103",
+        "SYN-109"
+      ],
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "routine change on well-known code",
+          "tag": "familiar-application"
+        },
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        },
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        }
+      ],
+      "item_id": "SYN-115",
+      "notes": "implementation is small and the code is well known",
+      "points": 3
+    },
+    "item_id": "SYN-115",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 1.7,
+      "engineering_days": 1.1,
+      "item_id": "SYN-115",
+      "surprises": [
+        {
+          "detail": "a shared library already covered the needed auth flow",
+          "kind": "new-dependency"
+        }
+      ]
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Page passes the existing visual regression checks",
+        "No changes to the public API surface",
+        "New columns render with the existing sort and filter behaviour",
+        "Export respects the selected range on empty and boundary values"
+      ],
+      "description": "The settings page uses the shared form styles with minor overrides. The change reuses the existing table component and only adds new columns. No new dependencies or services are involved. The dashboard code follows the established widget pattern and is well understood.",
+      "item_id": "SYN-115",
+      "sprint": 3,
+      "summary": "Fix the account settings page layout on narrow screens"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        }
+      ],
+      "item_id": "SYN-116",
+      "notes": "implementation appears small; uncertainty is in the integration",
+      "points": 3
+    },
+    "item_id": "SYN-116",
+    "outcome": {
+      "actual_points": 3,
+      "elapsed_days": 2.6,
+      "engineering_days": 1.2,
+      "item_id": "SYN-116"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Suite runtime stays under the build budget",
+        "Coverage of the changed paths is reported and reviewed"
+      ],
+      "description": "The suite must run against a seeded database with fixed timestamps. The tests also pin behaviour that has no specification.",
+      "item_id": "SYN-116",
+      "sprint": 4,
+      "summary": "Cover the pricing edge cases with a property-based suite"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-105",
+        "SYN-111"
+      ],
+      "confidence": "low",
+      "factors": [
+        {
+          "reason": "third-party behaviour is outside the team's control",
+          "tag": "external-dependency"
+        },
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        }
+      ],
+      "item_id": "SYN-117",
+      "notes": "schedule risk sits mostly with the provider",
+      "points": 3
+    },
+    "item_id": "SYN-117",
+    "outcome": {
+      "actual_points": 3,
+      "elapsed_days": 5.6,
+      "engineering_days": 1.5,
+      "item_id": "SYN-117"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Sandbox end-to-end flow passes",
+        "Webhooks verify signatures and ignore unknown event types",
+        "Provider outage degrades to queued retries without data loss",
+        "Rate-limit responses back off and retry"
+      ],
+      "description": "The provider sandbox is available but the rate limits are not fully documented. The notification service may change its payload shape between releases.",
+      "item_id": "SYN-117",
+      "sprint": 4,
+      "summary": "Connect the order notification service"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        },
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        },
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        }
+      ],
+      "item_id": "SYN-118",
+      "notes": "estimate follows the historical pattern for this kind of work",
+      "points": 2
+    },
+    "item_id": "SYN-118",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 1.9,
+      "engineering_days": 0.8,
+      "item_id": "SYN-118"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Prototype records and replays a session from the demo dataset",
+        "Findings are written up with a recommendation",
+        "No production traffic is touched",
+        "Demo runs on the seeded dataset without manual steps"
+      ],
+      "description": "Findings matter more than the implementation quality. The prototype only needs to work for the demo dataset. The approach is uncertain and the first version is expected to be thrown away. The team has not used this library before.",
+      "item_id": "SYN-118",
+      "sprint": 4,
+      "summary": "Explore the streaming ingestion path for analytics events"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-101",
+        "SYN-107"
+      ],
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "historical migrations have exceeded base estimates",
+          "tag": "migration"
+        },
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        },
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        }
+      ],
+      "item_id": "SYN-119",
+      "notes": "similar migration work has historically exceeded base estimates",
+      "points": 1
+    },
+    "item_id": "SYN-119",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 2.3,
+      "engineering_days": 1.1,
+      "item_id": "SYN-119"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Rollback procedure is documented and exercised once",
+        "No gap or duplication in processed records across the cutover",
+        "Replacement job produces identical output for a seeded week of history",
+        "Old jobs are disabled only after the new job passes monitoring checks"
+      ],
+      "description": "Several downstream consumers read the current output format and are switched after the cutover. The migration runs as a series of small cutovers to keep rollback cheap. Historical data is replayed into the new system before the switch. The new pipeline reads the same source tables and produces byte-compatible output files.",
+      "item_id": "SYN-119",
+      "sprint": 4,
+      "summary": "Migrate billing export jobs off the legacy scheduler"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        },
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        },
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        }
+      ],
+      "item_id": "SYN-120",
+      "notes": "confidence reflects how settled the requirements are",
+      "points": 5
+    },
+    "item_id": "SYN-120",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 6.3,
+      "engineering_days": 2.8,
+      "item_id": "SYN-120"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Both teams approve before merge",
+        "Schema change ships in the jointly agreed window"
+      ],
+      "description": "The deprecation notice needs a published date both teams accept. Reviews from two other teams are required before merge.",
+      "item_id": "SYN-120",
+      "sprint": 4,
+      "summary": "Align the API deprecation timeline with the mobile team"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-103",
+        "SYN-109"
+      ],
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "routine change on well-known code",
+          "tag": "familiar-application"
+        },
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        }
+      ],
+      "item_id": "SYN-121",
+      "notes": "implementation is small and the code is well known",
+      "points": 3
+    },
+    "item_id": "SYN-121",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 3.3,
+      "engineering_days": 1.0,
+      "item_id": "SYN-121"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Export respects the selected range on empty and boundary values",
+        "No changes to the public API surface",
+        "Page passes the existing visual regression checks",
+        "New columns render with the existing sort and filter behaviour"
+      ],
+      "description": "No new dependencies or services are involved. The export path already supports filters; only the UI and one query change. The dashboard code follows the established widget pattern and is well understood.",
+      "item_id": "SYN-121",
+      "sprint": 5,
+      "summary": "Add a column set to the admin dashboard"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        },
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        },
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        }
+      ],
+      "item_id": "SYN-122",
+      "notes": "confidence reflects how settled the requirements are",
+      "points": 3
+    },
+    "item_id": "SYN-122",
+    "outcome": {
+      "actual_points": 3,
+      "elapsed_days": 6.3,
+      "engineering_days": 1.7,
+      "item_id": "SYN-122"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Both teams approve before merge",
+        "No consumer breaks in the release following the change",
+        "Deprecation notice is posted and acknowledged",
+        "Schema change ships in the jointly agreed window"
+      ],
+      "description": "The change touches a schema owned by another team. Part of the work is waiting on another team's availability. Reviews from two other teams are required before merge. The rollout must line up with the mobile release train.",
+      "item_id": "SYN-122",
+      "sprint": 5,
+      "summary": "Align the API deprecation timeline with the mobile team"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-105",
+        "SYN-111"
+      ],
+      "confidence": "low",
+      "factors": [
+        {
+          "reason": "third-party behaviour is outside the team's control",
+          "tag": "external-dependency"
+        }
+      ],
+      "item_id": "SYN-123",
+      "notes": "schedule risk sits mostly with the provider",
+      "points": 5
+    },
+    "item_id": "SYN-123",
+    "outcome": {
+      "actual_points": 8,
+      "elapsed_days": 6.2,
+      "engineering_days": 3.5,
+      "item_id": "SYN-123",
+      "override": {
+        "corrected_estimate": 8,
+        "reason": "undocumented rate limits forced a redesign of the sync loop"
+      },
+      "surprises": [
+        {
+          "detail": "provider added an undocumented rate limit",
+          "kind": "new-dependency"
+        }
+      ]
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Rate-limit responses back off and retry",
+        "Sandbox end-to-end flow passes",
+        "Provider outage degrades to queued retries without data loss"
+      ],
+      "description": "The provider sandbox is available but the rate limits are not fully documented. The notification service may change its payload shape between releases. The geocoding API has known quirks around ambiguous addresses. Failures must degrade gracefully while the provider is unreachable.",
+      "item_id": "SYN-123",
+      "sprint": 5,
+      "summary": "Integrate the payments provider webhooks"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        },
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        },
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        }
+      ],
+      "item_id": "SYN-124",
+      "notes": "confidence reflects how settled the requirements are",
+      "points": 2
+    },
+    "item_id": "SYN-124",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 3.7,
+      "engineering_days": 1.0,
+      "item_id": "SYN-124"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Coverage of the changed paths is reported and reviewed",
+        "Edge-case fixtures are committed and deterministic",
+        "Suite runtime stays under the build budget",
+        "Integration suite covers the full order lifecycle"
+      ],
+      "description": "The suite must run against a seeded database with fixed timestamps. The change is small but the test surface is large. The tests also pin behaviour that has no specification. Existing coverage is thin, so tests are written first.",
+      "item_id": "SYN-124",
+      "sprint": 5,
+      "summary": "Cover the pricing edge cases with a property-based suite"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-101",
+        "SYN-107"
+      ],
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "historical migrations have exceeded base estimates",
+          "tag": "migration"
+        }
+      ],
+      "item_id": "SYN-125",
+      "notes": "similar migration work has historically exceeded base estimates",
+      "points": 1
+    },
+    "item_id": "SYN-125",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 4.1,
+      "engineering_days": 0.8,
+      "item_id": "SYN-125"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Replacement job produces identical output for a seeded week of history",
+        "Rollback procedure is documented and exercised once",
+        "Old jobs are disabled only after the new job passes monitoring checks"
+      ],
+      "description": "The migration runs as a series of small cutovers to keep rollback cheap. The existing jobs run on the legacy scheduler and are removed only after the replacement runs cleanly for a week. Historical data is replayed into the new system before the switch. The new pipeline reads the same source tables and produces byte-compatible output files.",
+      "item_id": "SYN-125",
+      "sprint": 5,
+      "summary": "Move the customer import pipeline to the new data platform"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        },
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        }
+      ],
+      "item_id": "SYN-126",
+      "notes": "confidence reflects how settled the requirements are",
+      "points": 8
+    },
+    "item_id": "SYN-126",
+    "outcome": {
+      "actual_points": 8,
+      "elapsed_days": 6.5,
+      "engineering_days": 3.8,
+      "item_id": "SYN-126"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Coverage of the changed paths is reported and reviewed",
+        "Edge-case fixtures are committed and deterministic",
+        "Integration suite covers the full order lifecycle",
+        "Suite runtime stays under the build budget"
+      ],
+      "description": "The tests also pin behaviour that has no specification. The suite must run against a seeded database with fixed timestamps. Most of the effort goes into fixtures and test data. Existing coverage is thin, so tests are written first.",
+      "item_id": "SYN-126",
+      "sprint": 6,
+      "summary": "Cover the pricing edge cases with a property-based suite"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-103",
+        "SYN-109"
+      ],
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "routine change on well-known code",
+          "tag": "familiar-application"
+        },
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        }
+      ],
+      "item_id": "SYN-127",
+      "notes": "implementation is small and the code is well known",
+      "points": 5
+    },
+    "item_id": "SYN-127",
+    "outcome": {
+      "actual_points": 3,
+      "elapsed_days": 4.4,
+      "engineering_days": 1.7,
+      "item_id": "SYN-127",
+      "override": {
+        "corrected_estimate": 3,
+        "reason": "the estimate assumed more surface area than the change touched"
+      },
+      "surprises": [
+        {
+          "detail": "scope trimmed after design review",
+          "kind": "scope-change"
+        }
+      ]
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "New columns render with the existing sort and filter behaviour",
+        "Page passes the existing visual regression checks",
+        "Export respects the selected range on empty and boundary values",
+        "No changes to the public API surface"
+      ],
+      "description": "The dashboard code follows the established widget pattern and is well understood. The change reuses the existing table component and only adds new columns.",
+      "item_id": "SYN-127",
+      "sprint": 6,
+      "summary": "Extend the report export with an optional date range"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        }
+      ],
+      "item_id": "SYN-128",
+      "notes": "estimate follows the historical pattern for this kind of work",
+      "points": 5
+    },
+    "item_id": "SYN-128",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 6.3,
+      "engineering_days": 2.6,
+      "item_id": "SYN-128"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Coverage of the changed paths is reported and reviewed",
+        "Suite runtime stays under the build budget"
+      ],
+      "description": "The tests also pin behaviour that has no specification. Existing coverage is thin, so tests are written first. The suite must run against a seeded database with fixed timestamps.",
+      "item_id": "SYN-128",
+      "sprint": 6,
+      "summary": "Cover the pricing edge cases with a property-based suite"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-105",
+        "SYN-111"
+      ],
+      "confidence": "low",
+      "factors": [
+        {
+          "reason": "third-party behaviour is outside the team's control",
+          "tag": "external-dependency"
+        }
+      ],
+      "item_id": "SYN-129",
+      "notes": "schedule risk sits mostly with the provider",
+      "points": 5
+    },
+    "item_id": "SYN-129",
+    "outcome": {
+      "actual_points": 8,
+      "elapsed_days": 6.5,
+      "engineering_days": 3.4,
+      "item_id": "SYN-129",
+      "surprises": [
+        {
+          "detail": "webhook retry behaviour required an extra queue",
+          "kind": "new-dependency"
+        }
+      ]
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Sandbox end-to-end flow passes",
+        "Webhooks verify signatures and ignore unknown event types",
+        "Rate-limit responses back off and retry"
+      ],
+      "description": "Failures must degrade gracefully while the provider is unreachable. Webhook payloads must be verified against the provider signing scheme.",
+      "item_id": "SYN-129",
+      "sprint": 6,
+      "summary": "Adopt the new geocoding service for address lookups"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        },
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        }
+      ],
+      "item_id": "SYN-130",
+      "notes": "implementation appears small; uncertainty is in the integration",
+      "points": 3
+    },
+    "item_id": "SYN-130",
+    "outcome": {
+      "actual_points": 3,
+      "elapsed_days": 4.9,
+      "engineering_days": 1.7,
+      "item_id": "SYN-130"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Canary rollout shows no increase in retry errors",
+        "New alerts fire on the failure modes the change could cause",
+        "Rollback is verified in staging before the change ships"
+      ],
+      "description": "Observability is added before the behaviour changes. The change needs a canary rollout and a fast rollback path. The deployment script is exercised against the staging environment first. The worker runs unattended and a mistake could retry payments.",
+      "item_id": "SYN-130",
+      "sprint": 6,
+      "summary": "Update the deployment script for the frontend bundle"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-101",
+        "SYN-107"
+      ],
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "historical migrations have exceeded base estimates",
+          "tag": "migration"
+        },
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        },
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        }
+      ],
+      "item_id": "SYN-131",
+      "notes": "similar migration work has historically exceeded base estimates",
+      "points": 2
+    },
+    "item_id": "SYN-131",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 6.9,
+      "engineering_days": 2.7,
+      "item_id": "SYN-131",
+      "override": {
+        "corrected_estimate": 5,
+        "reason": "missed the backward-compatibility surface"
+      },
+      "surprises": [
+        {
+          "detail": "backward-compatibility shim added mid-sprint",
+          "kind": "scope-change"
+        }
+      ]
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Replacement job produces identical output for a seeded week of history",
+        "Old jobs are disabled only after the new job passes monitoring checks",
+        "Rollback procedure is documented and exercised once",
+        "No gap or duplication in processed records across the cutover"
+      ],
+      "description": "The new pipeline reads the same source tables and produces byte-compatible output files. Historical data is replayed into the new system before the switch. Several downstream consumers read the current output format and are switched after the cutover.",
+      "item_id": "SYN-131",
+      "sprint": 7,
+      "summary": "Rebuild the search index on the current stack and retire the old one"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "little team knowledge of this area",
+          "tag": "unfamiliar-subsystem"
+        }
+      ],
+      "item_id": "SYN-132",
+      "notes": "implementation appears small; uncertainty is in the integration",
+      "points": 2
+    },
+    "item_id": "SYN-132",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 2.9,
+      "engineering_days": 1.1,
+      "item_id": "SYN-132"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Regression tests pass on the seeded dataset",
+        "Permission changes are covered by new tests for each rule",
+        "Cleanup job runs without losing live sessions",
+        "Known gaps are listed rather than fixed"
+      ],
+      "description": "The change is kept small because the blast radius is unclear. The session store predates the current team and has no maintainer notes. Investigation time is included in the estimate. The reporting service has grown a custom permission layer nobody fully understands.",
+      "item_id": "SYN-132",
+      "sprint": 7,
+      "summary": "Extend the permission checks in the reporting service"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-103",
+        "SYN-109"
+      ],
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "routine change on well-known code",
+          "tag": "familiar-application"
+        }
+      ],
+      "item_id": "SYN-133",
+      "notes": "implementation is small and the code is well known",
+      "points": 8
+    },
+    "item_id": "SYN-133",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 4.4,
+      "engineering_days": 2.5,
+      "item_id": "SYN-133"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "New columns render with the existing sort and filter behaviour",
+        "Page passes the existing visual regression checks"
+      ],
+      "description": "The export path already supports filters; only the UI and one query change. The change reuses the existing table component and only adds new columns. The settings page uses the shared form styles with minor overrides. No new dependencies or services are involved.",
+      "item_id": "SYN-133",
+      "sprint": 7,
+      "summary": "Fix the account settings page layout on narrow screens"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        },
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        },
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        }
+      ],
+      "item_id": "SYN-134",
+      "notes": "implementation appears small; uncertainty is in the integration",
+      "points": 5
+    },
+    "item_id": "SYN-134",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 5.2,
+      "engineering_days": 2.1,
+      "item_id": "SYN-134"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Schema change ships in the jointly agreed window",
+        "Both teams approve before merge"
+      ],
+      "description": "Part of the work is waiting on another team's availability. The deprecation notice needs a published date both teams accept. The change touches a schema owned by another team. The rollout must line up with the mobile release train.",
+      "item_id": "SYN-134",
+      "sprint": 7,
+      "summary": "Align the API deprecation timeline with the mobile team"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-105",
+        "SYN-111"
+      ],
+      "confidence": "low",
+      "factors": [
+        {
+          "reason": "third-party behaviour is outside the team's control",
+          "tag": "external-dependency"
+        },
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        }
+      ],
+      "item_id": "SYN-135",
+      "notes": "schedule risk sits mostly with the provider",
+      "points": 8
+    },
+    "item_id": "SYN-135",
+    "outcome": {
+      "actual_points": 13,
+      "elapsed_days": 6.3,
+      "engineering_days": 6.1,
+      "item_id": "SYN-135",
+      "surprises": [
+        {
+          "detail": "payload schema changed between sandbox and production",
+          "kind": "new-dependency"
+        }
+      ]
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Sandbox end-to-end flow passes",
+        "Rate-limit responses back off and retry",
+        "Webhooks verify signatures and ignore unknown event types",
+        "Provider outage degrades to queued retries without data loss"
+      ],
+      "description": "The geocoding API has known quirks around ambiguous addresses. The notification service may change its payload shape between releases. The provider sandbox is available but the rate limits are not fully documented.",
+      "item_id": "SYN-135",
+      "sprint": 7,
+      "summary": "Connect the order notification service"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "little team knowledge of this area",
+          "tag": "unfamiliar-subsystem"
+        },
+        {
+          "reason": "large test surface relative to the change",
+          "tag": "testing-burden"
+        },
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        }
+      ],
+      "item_id": "SYN-136",
+      "notes": "estimate follows the historical pattern for this kind of work",
+      "points": 3
+    },
+    "item_id": "SYN-136",
+    "outcome": {
+      "actual_points": 3,
+      "elapsed_days": 4.4,
+      "engineering_days": 1.7,
+      "item_id": "SYN-136"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Permission changes are covered by new tests for each rule",
+        "Regression tests pass on the seeded dataset"
+      ],
+      "description": "The change is kept small because the blast radius is unclear. Behaviour is pinned with tests before changes are made. The reporting service has grown a custom permission layer nobody fully understands.",
+      "item_id": "SYN-136",
+      "sprint": 8,
+      "summary": "Extend the permission checks in the reporting service"
+    }
+  },
+  {
+    "estimate": {
+      "analogues": [
+        "SYN-101",
+        "SYN-107"
+      ],
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "historical migrations have exceeded base estimates",
+          "tag": "migration"
+        }
+      ],
+      "item_id": "SYN-137",
+      "notes": "similar migration work has historically exceeded base estimates",
+      "points": 2
+    },
+    "item_id": "SYN-137",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 4.8,
+      "engineering_days": 2.8,
+      "item_id": "SYN-137"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Replacement job produces identical output for a seeded week of history",
+        "Old jobs are disabled only after the new job passes monitoring checks",
+        "Rollback procedure is documented and exercised once",
+        "No gap or duplication in processed records across the cutover"
+      ],
+      "description": "The new pipeline reads the same source tables and produces byte-compatible output files. The migration runs as a series of small cutovers to keep rollback cheap. The existing jobs run on the legacy scheduler and are removed only after the replacement runs cleanly for a week.",
+      "item_id": "SYN-137",
+      "sprint": 8,
+      "summary": "Migrate billing export jobs off the legacy scheduler"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        },
+        {
+          "reason": "little team knowledge of this area",
+          "tag": "unfamiliar-subsystem"
+        }
+      ],
+      "item_id": "SYN-138",
+      "notes": "estimate follows the historical pattern for this kind of work",
+      "points": 2
+    },
+    "item_id": "SYN-138",
+    "outcome": {
+      "actual_points": 2,
+      "elapsed_days": 3.2,
+      "engineering_days": 1.0,
+      "item_id": "SYN-138"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "No consumer breaks in the release following the change",
+        "Schema change ships in the jointly agreed window",
+        "Both teams approve before merge"
+      ],
+      "description": "Part of the work is waiting on another team's availability. Reviews from two other teams are required before merge.",
+      "item_id": "SYN-138",
+      "sprint": 8,
+      "summary": "Align the API deprecation timeline with the mobile team"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "little team knowledge of this area",
+          "tag": "unfamiliar-subsystem"
+        }
+      ],
+      "item_id": "SYN-139",
+      "notes": "estimate follows the historical pattern for this kind of work",
+      "points": 5
+    },
+    "item_id": "SYN-139",
+    "outcome": {
+      "actual_points": 5,
+      "elapsed_days": 3.3,
+      "engineering_days": 2.4,
+      "item_id": "SYN-139"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "Cleanup job runs without losing live sessions",
+        "Known gaps are listed rather than fixed",
+        "Permission changes are covered by new tests for each rule"
+      ],
+      "description": "The reporting service has grown a custom permission layer nobody fully understands. The change is kept small because the blast radius is unclear. Investigation time is included in the estimate.",
+      "item_id": "SYN-139",
+      "sprint": 8,
+      "summary": "Fix the flaky session store cleanup"
+    }
+  },
+  {
+    "estimate": {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        },
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        }
+      ],
+      "item_id": "SYN-140",
+      "notes": "confidence reflects how settled the requirements are",
+      "points": 8
+    },
+    "item_id": "SYN-140",
+    "outcome": {
+      "actual_points": 8,
+      "elapsed_days": 6.3,
+      "engineering_days": 3.4,
+      "item_id": "SYN-140"
+    },
+    "work_item": {
+      "acceptance_criteria": [
+        "No consumer breaks in the release following the change",
+        "Deprecation notice is posted and acknowledged",
+        "Both teams approve before merge"
+      ],
+      "description": "The rollout must line up with the mobile release train. The deprecation notice needs a published date both teams accept. The change touches a schema owned by another team. Reviews from two other teams are required before merge.",
+      "item_id": "SYN-140",
+      "sprint": 8,
+      "summary": "Align the API deprecation timeline with the mobile team"
+    }
+  }
+]

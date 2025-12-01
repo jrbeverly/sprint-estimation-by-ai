@@ -1,0 +1,80 @@
+[
+  {
+    "actual_points": 3,
+    "elapsed_days": 5.6,
+    "engineering_days": 1.8,
+    "item_id": "SYN-301"
+  },
+  {
+    "actual_points": 3,
+    "elapsed_days": 5.3,
+    "engineering_days": 1.6,
+    "item_id": "SYN-302"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 5.1,
+    "engineering_days": 1.0,
+    "item_id": "SYN-303"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 5.0,
+    "engineering_days": 2.1,
+    "item_id": "SYN-304"
+  },
+  {
+    "actual_points": 3,
+    "elapsed_days": 2.3,
+    "engineering_days": 1.8,
+    "item_id": "SYN-305"
+  },
+  {
+    "actual_points": 8,
+    "elapsed_days": 8.0,
+    "engineering_days": 4.7,
+    "item_id": "SYN-306"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 4.6,
+    "engineering_days": 2.5,
+    "item_id": "SYN-307"
+  },
+  {
+    "actual_points": 3,
+    "elapsed_days": 4.4,
+    "engineering_days": 1.7,
+    "item_id": "SYN-308"
+  },
+  {
+    "actual_points": 8,
+    "elapsed_days": 7.5,
+    "engineering_days": 4.3,
+    "item_id": "SYN-309"
+  },
+  {
+    "actual_points": 8,
+    "elapsed_days": 6.7,
+    "engineering_days": 4.2,
+    "item_id": "SYN-310"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 4.7,
+    "engineering_days": 2.7,
+    "item_id": "SYN-311"
+  },
+  {
+    "actual_points": 13,
+    "elapsed_days": 9.6,
+    "engineering_days": 6.8,
+    "item_id": "SYN-312",
+    "surprises": [
+      {
+        "detail": "provider sandbox and production differ on retry behaviour",
+        "kind": "new-dependency"
+      }
+    ]
+  }
+]

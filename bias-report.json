@@ -1,0 +1,198 @@
+{
+  "effort": {
+    "engineering_days_mean_per_item": 2.1075000000000004,
+    "engineering_days_per_actual_point": 0.49298245614035097,
+    "engineering_days_total": 84.30000000000001
+  },
+  "elapsed": {
+    "elapsed_days_mean_per_item": 4.7250000000000005,
+    "elapsed_days_total": 189.00000000000003,
+    "waiting_days_max_per_item": 4.8,
+    "waiting_days_mean_per_item": 2.6175000000000006,
+    "waiting_days_total": 104.70000000000003
+  },
+  "overall": {
+    "actual_points": 171,
+    "estimated_points": 160,
+    "ratio": 1.06875,
+    "spread": {
+      "max": 2.5,
+      "min": 0.6
+    }
+  },
+  "overrides": {
+    "items": [
+      {
+        "corrected_estimate": 3,
+        "item_id": "SYN-101",
+        "reason": "underestimated the amount of cleanup the cutover required"
+      },
+      {
+        "corrected_estimate": 2,
+        "item_id": "SYN-105",
+        "reason": "the provider sandbox behaved differently than documented"
+      },
+      {
+        "corrected_estimate": 8,
+        "item_id": "SYN-123",
+        "reason": "undocumented rate limits forced a redesign of the sync loop"
+      },
+      {
+        "corrected_estimate": 3,
+        "item_id": "SYN-127",
+        "reason": "the estimate assumed more surface area than the change touched"
+      },
+      {
+        "corrected_estimate": 5,
+        "item_id": "SYN-131",
+        "reason": "missed the backward-compatibility surface"
+      }
+    ],
+    "overridden": 5,
+    "rate": 0.125,
+    "total": 40
+  },
+  "per_factor": [
+    {
+      "factor": "migration",
+      "median_ratio": 2.0,
+      "observations": 7,
+      "spread": {
+        "max": 2.5,
+        "min": 1.5
+      }
+    },
+    {
+      "factor": "familiar-application",
+      "median_ratio": 0.6666666666666666,
+      "observations": 6,
+      "spread": {
+        "max": 0.6666666666666666,
+        "min": 0.6
+      }
+    },
+    {
+      "factor": "external-dependency",
+      "median_ratio": 1.3,
+      "observations": 6,
+      "spread": {
+        "max": 1.625,
+        "min": 0.6666666666666666
+      }
+    },
+    {
+      "factor": "novelty",
+      "median_ratio": 1.0,
+      "observations": 9,
+      "spread": {
+        "max": 2.5,
+        "min": 0.625
+      }
+    },
+    {
+      "factor": "ambiguity",
+      "median_ratio": 1.0,
+      "observations": 9,
+      "spread": {
+        "max": 2.5,
+        "min": 0.6666666666666666
+      }
+    },
+    {
+      "factor": "unfamiliar-subsystem",
+      "median_ratio": 1.0,
+      "observations": 7,
+      "spread": {
+        "max": 1.5,
+        "min": 0.6666666666666666
+      }
+    },
+    {
+      "factor": "cross-team",
+      "median_ratio": 1.0,
+      "observations": 11,
+      "spread": {
+        "max": 1.0,
+        "min": 0.6
+      }
+    },
+    {
+      "factor": "testing-burden",
+      "median_ratio": 1.0,
+      "observations": 14,
+      "spread": {
+        "max": 1.5,
+        "min": 0.625
+      }
+    },
+    {
+      "factor": "operational-risk",
+      "median_ratio": 1.0,
+      "observations": 8,
+      "spread": {
+        "max": 2.0,
+        "min": 0.6666666666666666
+      }
+    }
+  ],
+  "per_sprint": [
+    {
+      "actual_points": 14,
+      "estimated_points": 19,
+      "items": 5,
+      "ratio": 0.7368421052631579,
+      "sprint": 1
+    },
+    {
+      "actual_points": 17,
+      "estimated_points": 16,
+      "items": 5,
+      "ratio": 1.0625,
+      "sprint": 2
+    },
+    {
+      "actual_points": 28,
+      "estimated_points": 26,
+      "items": 5,
+      "ratio": 1.0769230769230769,
+      "sprint": 3
+    },
+    {
+      "actual_points": 15,
+      "estimated_points": 14,
+      "items": 5,
+      "ratio": 1.0714285714285714,
+      "sprint": 4
+    },
+    {
+      "actual_points": 17,
+      "estimated_points": 14,
+      "items": 5,
+      "ratio": 1.2142857142857142,
+      "sprint": 5
+    },
+    {
+      "actual_points": 27,
+      "estimated_points": 26,
+      "items": 5,
+      "ratio": 1.0384615384615385,
+      "sprint": 6
+    },
+    {
+      "actual_points": 30,
+      "estimated_points": 25,
+      "items": 5,
+      "ratio": 1.2,
+      "sprint": 7
+    },
+    {
+      "actual_points": 23,
+      "estimated_points": 20,
+      "items": 5,
+      "ratio": 1.15,
+      "sprint": 8
+    }
+  ],
+  "records": 40,
+  "version": "6e2286ca4c6faf4085ba24906b43eb257e5084f19cd8f332e007d38b4621fc3a"
+}

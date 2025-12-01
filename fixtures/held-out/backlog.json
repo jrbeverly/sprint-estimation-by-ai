@@ -1,0 +1,361 @@
+{
+  "estimates": [
+    {
+      "analogues": [
+        "SYN-101"
+      ],
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "historical migrations have exceeded base estimates",
+          "tag": "migration"
+        },
+        {
+          "reason": "little team knowledge of this area",
+          "tag": "unfamiliar-subsystem"
+        }
+      ],
+      "item_id": "SYN-301",
+      "notes": "similar migration work has historically exceeded base estimates",
+      "points": 2
+    },
+    {
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        }
+      ],
+      "item_id": "SYN-302",
+      "notes": "implementation appears small; uncertainty is in the integration",
+      "points": 3
+    },
+    {
+      "analogues": [
+        "SYN-103"
+      ],
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "routine change on well-known code",
+          "tag": "familiar-application"
+        }
+      ],
+      "item_id": "SYN-303",
+      "notes": "implementation is small and the code is well known",
+      "points": 3
+    },
+    {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        }
+      ],
+      "item_id": "SYN-304",
+      "notes": "estimate follows the historical pattern for this kind of work",
+      "points": 5
+    },
+    {
+      "analogues": [
+        "SYN-105"
+      ],
+      "confidence": "low",
+      "factors": [
+        {
+          "reason": "third-party behaviour is outside the team's control",
+          "tag": "external-dependency"
+        },
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        },
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        }
+      ],
+      "item_id": "SYN-305",
+      "notes": "schedule risk sits mostly with the provider",
+      "points": 3
+    },
+    {
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        },
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        },
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        }
+      ],
+      "item_id": "SYN-306",
+      "notes": "confidence reflects how settled the requirements are",
+      "points": 8
+    },
+    {
+      "analogues": [
+        "SYN-101"
+      ],
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "historical migrations have exceeded base estimates",
+          "tag": "migration"
+        },
+        {
+          "reason": "little team knowledge of this area",
+          "tag": "unfamiliar-subsystem"
+        },
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        }
+      ],
+      "item_id": "SYN-307",
+      "notes": "similar migration work has historically exceeded base estimates",
+      "points": 3
+    },
+    {
+      "analogues": [
+        "SYN-103"
+      ],
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "routine change on well-known code",
+          "tag": "familiar-application"
+        },
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        }
+      ],
+      "item_id": "SYN-308",
+      "notes": "implementation is small and the code is well known",
+      "points": 5
+    },
+    {
+      "analogues": [
+        "SYN-105"
+      ],
+      "confidence": "low",
+      "factors": [
+        {
+          "reason": "third-party behaviour is outside the team's control",
+          "tag": "external-dependency"
+        },
+        {
+          "reason": "no comparable prior work to lean on",
+          "tag": "novelty"
+        },
+        {
+          "reason": "work spans another team's ownership",
+          "tag": "cross-team"
+        }
+      ],
+      "item_id": "SYN-309",
+      "notes": "schedule risk sits mostly with the provider",
+      "points": 5
+    },
+    {
+      "analogues": [
+        "SYN-101"
+      ],
+      "confidence": "medium",
+      "factors": [
+        {
+          "reason": "historical migrations have exceeded base estimates",
+          "tag": "migration"
+        },
+        {
+          "reason": "little team knowledge of this area",
+          "tag": "unfamiliar-subsystem"
+        },
+        {
+          "reason": "mistakes in this path are expensive",
+          "tag": "operational-risk"
+        }
+      ],
+      "item_id": "SYN-310",
+      "notes": "similar migration work has historically exceeded base estimates",
+      "points": 5
+    },
+    {
+      "analogues": [
+        "SYN-103"
+      ],
+      "confidence": "high",
+      "factors": [
+        {
+          "reason": "routine change on well-known code",
+          "tag": "familiar-application"
+        }
+      ],
+      "item_id": "SYN-311",
+      "notes": "implementation is small and the code is well known",
+      "points": 8
+    },
+    {
+      "analogues": [
+        "SYN-105"
+      ],
+      "confidence": "low",
+      "factors": [
+        {
+          "reason": "third-party behaviour is outside the team's control",
+          "tag": "external-dependency"
+        },
+        {
+          "reason": "requirements are still contested",
+          "tag": "ambiguity"
+        }
+      ],
+      "item_id": "SYN-312",
+      "notes": "schedule risk sits mostly with the provider",
+      "points": 8
+    }
+  ],
+  "items": [
+    {
+      "acceptance_criteria": [
+        "Old jobs are disabled only after the new job passes monitoring checks",
+        "Replacement job produces identical output for a seeded week of history",
+        "Rollback procedure is documented and exercised once"
+      ],
+      "description": "Several downstream consumers read the current output format and are switched after the cutover. The migration runs as a series of small cutovers to keep rollback cheap. The existing jobs run on the legacy scheduler and are removed only after the replacement runs cleanly for a week.",
+      "item_id": "SYN-301",
+      "sprint": 9,
+      "summary": "Migrate billing export jobs off the legacy scheduler"
+    },
+    {
+      "acceptance_criteria": [
+        "Canary rollout shows no increase in retry errors",
+        "Rollback is verified in staging before the change ships",
+        "Runbook is updated for the new behaviour",
+        "New alerts fire on the failure modes the change could cause"
+      ],
+      "description": "The change needs a canary rollout and a fast rollback path. Observability is added before the behaviour changes. The worker runs unattended and a mistake could retry payments. The rollout window is coordinated with the support rotation.",
+      "item_id": "SYN-302",
+      "sprint": 9,
+      "summary": "Update the deployment script for the frontend bundle"
+    },
+    {
+      "acceptance_criteria": [
+        "Export respects the selected range on empty and boundary values",
+        "New columns render with the existing sort and filter behaviour"
+      ],
+      "description": "The export path already supports filters; only the UI and one query change. The change reuses the existing table component and only adds new columns. No new dependencies or services are involved. The dashboard code follows the established widget pattern and is well understood.",
+      "item_id": "SYN-303",
+      "sprint": 9,
+      "summary": "Add a column set to the admin dashboard"
+    },
+    {
+      "acceptance_criteria": [
+        "No production traffic is touched",
+        "Findings are written up with a recommendation"
+      ],
+      "description": "The team has not used this library before. No comparable feature exists in the codebase yet. Findings matter more than the implementation quality.",
+      "item_id": "SYN-304",
+      "sprint": 9,
+      "summary": "Explore the streaming ingestion path for analytics events"
+    },
+    {
+      "acceptance_criteria": [
+        "Rate-limit responses back off and retry",
+        "Webhooks verify signatures and ignore unknown event types",
+        "Provider outage degrades to queued retries without data loss"
+      ],
+      "description": "Webhook payloads must be verified against the provider signing scheme. The geocoding API has known quirks around ambiguous addresses. Failures must degrade gracefully while the provider is unreachable.",
+      "item_id": "SYN-305",
+      "sprint": 9,
+      "summary": "Integrate the payments provider webhooks"
+    },
+    {
+      "acceptance_criteria": [
+        "Open questions are captured with owners",
+        "Implementation follows the recorded decision",
+        "Decision is recorded with the chosen edge-case behaviour"
+      ],
+      "description": "The scope depends on a product decision that has not landed yet. The ticket has been rewritten twice and may still change. Stakeholders disagree about the expected behaviour in edge cases. The implementation is deferred until the decision is recorded.",
+      "item_id": "SYN-306",
+      "sprint": 9,
+      "summary": "Resolve the conflicting requirements for the search ranking"
+    },
+    {
+      "acceptance_criteria": [
+        "Rollback procedure is documented and exercised once",
+        "Old jobs are disabled only after the new job passes monitoring checks",
+        "Replacement job produces identical output for a seeded week of history"
+      ],
+      "description": "Several downstream consumers read the current output format and are switched after the cutover. The new pipeline reads the same source tables and produces byte-compatible output files. Historical data is replayed into the new system before the switch. The existing jobs run on the legacy scheduler and are removed only after the replacement runs cleanly for a week.",
+      "item_id": "SYN-307",
+      "sprint": 9,
+      "summary": "Move the customer import pipeline to the new data platform"
+    },
+    {
+      "acceptance_criteria": [
+        "Export respects the selected range on empty and boundary values",
+        "Page passes the existing visual regression checks",
+        "No changes to the public API surface",
+        "New columns render with the existing sort and filter behaviour"
+      ],
+      "description": "The settings page uses the shared form styles with minor overrides. The export path already supports filters; only the UI and one query change. No new dependencies or services are involved.",
+      "item_id": "SYN-308",
+      "sprint": 9,
+      "summary": "Extend the report export with an optional date range"
+    },
+    {
+      "acceptance_criteria": [
+        "Rate-limit responses back off and retry",
+        "Webhooks verify signatures and ignore unknown event types"
+      ],
+      "description": "The geocoding API has known quirks around ambiguous addresses. The provider sandbox is available but the rate limits are not fully documented. The notification service may change its payload shape between releases.",
+      "item_id": "SYN-309",
+      "sprint": 9,
+      "summary": "Adopt the new geocoding service for address lookups"
+    },
+    {
+      "acceptance_criteria": [
+        "Replacement job produces identical output for a seeded week of history",
+        "No gap or duplication in processed records across the cutover",
+        "Old jobs are disabled only after the new job passes monitoring checks"
+      ],
+      "description": "The migration runs as a series of small cutovers to keep rollback cheap. Historical data is replayed into the new system before the switch. The new pipeline reads the same source tables and produces byte-compatible output files. Several downstream consumers read the current output format and are switched after the cutover.",
+      "item_id": "SYN-310",
+      "sprint": 9,
+      "summary": "Rebuild the search index on the current stack and retire the old one"
+    },
+    {
+      "acceptance_criteria": [
+        "Page passes the existing visual regression checks",
+        "New columns render with the existing sort and filter behaviour",
+        "Export respects the selected range on empty and boundary values"
+      ],
+      "description": "The dashboard code follows the established widget pattern and is well understood. The change reuses the existing table component and only adds new columns.",
+      "item_id": "SYN-311",
+      "sprint": 9,
+      "summary": "Fix the account settings page layout on narrow screens"
+    },
+    {
+      "acceptance_criteria": [
+        "Rate-limit responses back off and retry",
+        "Webhooks verify signatures and ignore unknown event types",
+        "Sandbox end-to-end flow passes",
+        "Provider outage degrades to queued retries without data loss"
+      ],
+      "description": "Failures must degrade gracefully while the provider is unreachable. The provider sandbox is available but the rate limits are not fully documented. The geocoding API has known quirks around ambiguous addresses. Webhook payloads must be verified against the provider signing scheme.",
+      "item_id": "SYN-312",
+      "sprint": 9,
+      "summary": "Connect the order notification service"
+    }
+  ]
+}

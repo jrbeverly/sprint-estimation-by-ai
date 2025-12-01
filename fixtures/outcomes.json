@@ -1,0 +1,298 @@
+[
+  {
+    "actual_points": 3,
+    "elapsed_days": 2.8,
+    "engineering_days": 1.5,
+    "item_id": "SYN-101",
+    "override": {
+      "corrected_estimate": 3,
+      "reason": "underestimated the amount of cleanup the cutover required"
+    }
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 6.9,
+    "engineering_days": 2.6,
+    "item_id": "SYN-102"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 4.9,
+    "engineering_days": 0.8,
+    "item_id": "SYN-103"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 4.4,
+    "engineering_days": 0.8,
+    "item_id": "SYN-104"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 5.7,
+    "engineering_days": 0.9,
+    "item_id": "SYN-105",
+    "override": {
+      "corrected_estimate": 2,
+      "reason": "the provider sandbox behaved differently than documented"
+    }
+  },
+  {
+    "actual_points": 3,
+    "elapsed_days": 5.5,
+    "engineering_days": 1.7,
+    "item_id": "SYN-106"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 5.6,
+    "engineering_days": 2.4,
+    "item_id": "SYN-107"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 3.0,
+    "engineering_days": 2.4,
+    "item_id": "SYN-108"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 3.9,
+    "engineering_days": 1.1,
+    "item_id": "SYN-109"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 2.3,
+    "engineering_days": 1.1,
+    "item_id": "SYN-110"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 5.5,
+    "engineering_days": 2.2,
+    "item_id": "SYN-111"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 4.7,
+    "engineering_days": 2.1,
+    "item_id": "SYN-112"
+  },
+  {
+    "actual_points": 8,
+    "elapsed_days": 5.0,
+    "engineering_days": 4.7,
+    "item_id": "SYN-113"
+  },
+  {
+    "actual_points": 8,
+    "elapsed_days": 8.5,
+    "engineering_days": 4.5,
+    "item_id": "SYN-114"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 1.7,
+    "engineering_days": 1.1,
+    "item_id": "SYN-115",
+    "surprises": [
+      {
+        "detail": "a shared library already covered the needed auth flow",
+        "kind": "new-dependency"
+      }
+    ]
+  },
+  {
+    "actual_points": 3,
+    "elapsed_days": 2.6,
+    "engineering_days": 1.2,
+    "item_id": "SYN-116"
+  },
+  {
+    "actual_points": 3,
+    "elapsed_days": 5.6,
+    "engineering_days": 1.5,
+    "item_id": "SYN-117"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 1.9,
+    "engineering_days": 0.8,
+    "item_id": "SYN-118"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 2.3,
+    "engineering_days": 1.1,
+    "item_id": "SYN-119"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 6.3,
+    "engineering_days": 2.8,
+    "item_id": "SYN-120"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 3.3,
+    "engineering_days": 1.0,
+    "item_id": "SYN-121"
+  },
+  {
+    "actual_points": 3,
+    "elapsed_days": 6.3,
+    "engineering_days": 1.7,
+    "item_id": "SYN-122"
+  },
+  {
+    "actual_points": 8,
+    "elapsed_days": 6.2,
+    "engineering_days": 3.5,
+    "item_id": "SYN-123",
+    "override": {
+      "corrected_estimate": 8,
+      "reason": "undocumented rate limits forced a redesign of the sync loop"
+    },
+    "surprises": [
+      {
+        "detail": "provider added an undocumented rate limit",
+        "kind": "new-dependency"
+      }
+    ]
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 3.7,
+    "engineering_days": 1.0,
+    "item_id": "SYN-124"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 4.1,
+    "engineering_days": 0.8,
+    "item_id": "SYN-125"
+  },
+  {
+    "actual_points": 8,
+    "elapsed_days": 6.5,
+    "engineering_days": 3.8,
+    "item_id": "SYN-126"
+  },
+  {
+    "actual_points": 3,
+    "elapsed_days": 4.4,
+    "engineering_days": 1.7,
+    "item_id": "SYN-127",
+    "override": {
+      "corrected_estimate": 3,
+      "reason": "the estimate assumed more surface area than the change touched"
+    },
+    "surprises": [
+      {
+        "detail": "scope trimmed after design review",
+        "kind": "scope-change"
+      }
+    ]
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 6.3,
+    "engineering_days": 2.6,
+    "item_id": "SYN-128"
+  },
+  {
+    "actual_points": 8,
+    "elapsed_days": 6.5,
+    "engineering_days": 3.4,
+    "item_id": "SYN-129",
+    "surprises": [
+      {
+        "detail": "webhook retry behaviour required an extra queue",
+        "kind": "new-dependency"
+      }
+    ]
+  },
+  {
+    "actual_points": 3,
+    "elapsed_days": 4.9,
+    "engineering_days": 1.7,
+    "item_id": "SYN-130"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 6.9,
+    "engineering_days": 2.7,
+    "item_id": "SYN-131",
+    "override": {
+      "corrected_estimate": 5,
+      "reason": "missed the backward-compatibility surface"
+    },
+    "surprises": [
+      {
+        "detail": "backward-compatibility shim added mid-sprint",
+        "kind": "scope-change"
+      }
+    ]
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 2.9,
+    "engineering_days": 1.1,
+    "item_id": "SYN-132"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 4.4,
+    "engineering_days": 2.5,
+    "item_id": "SYN-133"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 5.2,
+    "engineering_days": 2.1,
+    "item_id": "SYN-134"
+  },
+  {
+    "actual_points": 13,
+    "elapsed_days": 6.3,
+    "engineering_days": 6.1,
+    "item_id": "SYN-135",
+    "surprises": [
+      {
+        "detail": "payload schema changed between sandbox and production",
+        "kind": "new-dependency"
+      }
+    ]
+  },
+  {
+    "actual_points": 3,
+    "elapsed_days": 4.4,
+    "engineering_days": 1.7,
+    "item_id": "SYN-136"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 4.8,
+    "engineering_days": 2.8,
+    "item_id": "SYN-137"
+  },
+  {
+    "actual_points": 2,
+    "elapsed_days": 3.2,
+    "engineering_days": 1.0,
+    "item_id": "SYN-138"
+  },
+  {
+    "actual_points": 5,
+    "elapsed_days": 3.3,
+    "engineering_days": 2.4,
+    "item_id": "SYN-139"
+  },
+  {
+    "actual_points": 8,
+    "elapsed_days": 6.3,
+    "engineering_days": 3.4,
+    "item_id": "SYN-140"
+  }
+]

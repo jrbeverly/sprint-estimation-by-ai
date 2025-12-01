@@ -1,0 +1,20 @@
+{
+  "confidence": "medium",
+  "factors": [
+    {
+      "reason": "Moves billing export jobs off the legacy scheduler to a new pipeline.",
+      "tag": "migration"
+    },
+    {
+      "reason": "Byte-compatible output, replay, cutover verification, and rollback exercise create a large test surface.",
+      "tag": "testing-burden"
+    },
+    {
+      "reason": "Billing export is a critical path where mistakes could be costly.",
+      "tag": "operational-risk"
+    }
+  ],
+  "item_id": "SYN-101",
+  "notes": "The replacement pipeline, historical replay, and verified cutover add meaningful implementation and testing effort. The one-week monitoring window and rollback exercise also increase coordination overhead.",
+  "points": 8
+}

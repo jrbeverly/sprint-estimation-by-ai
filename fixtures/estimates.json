@@ -1,0 +1,682 @@
+[
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "historical migrations have exceeded base estimates",
+        "tag": "migration"
+      },
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      },
+      {
+        "reason": "little team knowledge of this area",
+        "tag": "unfamiliar-subsystem"
+      }
+    ],
+    "item_id": "SYN-101",
+    "notes": "similar migration work has historically exceeded base estimates",
+    "points": 2
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "work spans another team's ownership",
+        "tag": "cross-team"
+      },
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      },
+      {
+        "reason": "no comparable prior work to lean on",
+        "tag": "novelty"
+      }
+    ],
+    "item_id": "SYN-102",
+    "notes": "implementation appears small; uncertainty is in the integration",
+    "points": 8
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "routine change on well-known code",
+        "tag": "familiar-application"
+      }
+    ],
+    "item_id": "SYN-103",
+    "notes": "implementation is small and the code is well known",
+    "points": 3
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "mistakes in this path are expensive",
+        "tag": "operational-risk"
+      },
+      {
+        "reason": "little team knowledge of this area",
+        "tag": "unfamiliar-subsystem"
+      },
+      {
+        "reason": "no comparable prior work to lean on",
+        "tag": "novelty"
+      }
+    ],
+    "item_id": "SYN-104",
+    "notes": "confidence reflects how settled the requirements are",
+    "points": 3
+  },
+  {
+    "confidence": "low",
+    "factors": [
+      {
+        "reason": "third-party behaviour is outside the team's control",
+        "tag": "external-dependency"
+      }
+    ],
+    "item_id": "SYN-105",
+    "notes": "schedule risk sits mostly with the provider",
+    "points": 3
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "no comparable prior work to lean on",
+        "tag": "novelty"
+      }
+    ],
+    "item_id": "SYN-106",
+    "notes": "implementation appears small; uncertainty is in the integration",
+    "points": 3
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "historical migrations have exceeded base estimates",
+        "tag": "migration"
+      }
+    ],
+    "item_id": "SYN-107",
+    "notes": "similar migration work has historically exceeded base estimates",
+    "points": 3
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "requirements are still contested",
+        "tag": "ambiguity"
+      },
+      {
+        "reason": "mistakes in this path are expensive",
+        "tag": "operational-risk"
+      }
+    ],
+    "item_id": "SYN-108",
+    "notes": "implementation appears small; uncertainty is in the integration",
+    "points": 5
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "routine change on well-known code",
+        "tag": "familiar-application"
+      },
+      {
+        "reason": "little team knowledge of this area",
+        "tag": "unfamiliar-subsystem"
+      }
+    ],
+    "item_id": "SYN-109",
+    "notes": "implementation is small and the code is well known",
+    "points": 3
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "work spans another team's ownership",
+        "tag": "cross-team"
+      }
+    ],
+    "item_id": "SYN-110",
+    "notes": "estimate follows the historical pattern for this kind of work",
+    "points": 2
+  },
+  {
+    "confidence": "low",
+    "factors": [
+      {
+        "reason": "third-party behaviour is outside the team's control",
+        "tag": "external-dependency"
+      }
+    ],
+    "item_id": "SYN-111",
+    "notes": "schedule risk sits mostly with the provider",
+    "points": 5
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "mistakes in this path are expensive",
+        "tag": "operational-risk"
+      },
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      },
+      {
+        "reason": "no comparable prior work to lean on",
+        "tag": "novelty"
+      }
+    ],
+    "item_id": "SYN-112",
+    "notes": "confidence reflects how settled the requirements are",
+    "points": 5
+  },
+  {
+    "analogues": [
+      "SYN-101",
+      "SYN-107"
+    ],
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "historical migrations have exceeded base estimates",
+        "tag": "migration"
+      }
+    ],
+    "item_id": "SYN-113",
+    "notes": "similar migration work has historically exceeded base estimates",
+    "points": 5
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "work spans another team's ownership",
+        "tag": "cross-team"
+      },
+      {
+        "reason": "mistakes in this path are expensive",
+        "tag": "operational-risk"
+      }
+    ],
+    "item_id": "SYN-114",
+    "notes": "estimate follows the historical pattern for this kind of work",
+    "points": 8
+  },
+  {
+    "analogues": [
+      "SYN-103",
+      "SYN-109"
+    ],
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "routine change on well-known code",
+        "tag": "familiar-application"
+      },
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      },
+      {
+        "reason": "requirements are still contested",
+        "tag": "ambiguity"
+      }
+    ],
+    "item_id": "SYN-115",
+    "notes": "implementation is small and the code is well known",
+    "points": 3
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      }
+    ],
+    "item_id": "SYN-116",
+    "notes": "implementation appears small; uncertainty is in the integration",
+    "points": 3
+  },
+  {
+    "analogues": [
+      "SYN-105",
+      "SYN-111"
+    ],
+    "confidence": "low",
+    "factors": [
+      {
+        "reason": "third-party behaviour is outside the team's control",
+        "tag": "external-dependency"
+      },
+      {
+        "reason": "no comparable prior work to lean on",
+        "tag": "novelty"
+      }
+    ],
+    "item_id": "SYN-117",
+    "notes": "schedule risk sits mostly with the provider",
+    "points": 3
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "no comparable prior work to lean on",
+        "tag": "novelty"
+      },
+      {
+        "reason": "requirements are still contested",
+        "tag": "ambiguity"
+      },
+      {
+        "reason": "work spans another team's ownership",
+        "tag": "cross-team"
+      }
+    ],
+    "item_id": "SYN-118",
+    "notes": "estimate follows the historical pattern for this kind of work",
+    "points": 2
+  },
+  {
+    "analogues": [
+      "SYN-101",
+      "SYN-107"
+    ],
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "historical migrations have exceeded base estimates",
+        "tag": "migration"
+      },
+      {
+        "reason": "no comparable prior work to lean on",
+        "tag": "novelty"
+      },
+      {
+        "reason": "mistakes in this path are expensive",
+        "tag": "operational-risk"
+      }
+    ],
+    "item_id": "SYN-119",
+    "notes": "similar migration work has historically exceeded base estimates",
+    "points": 1
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "work spans another team's ownership",
+        "tag": "cross-team"
+      },
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      },
+      {
+        "reason": "requirements are still contested",
+        "tag": "ambiguity"
+      }
+    ],
+    "item_id": "SYN-120",
+    "notes": "confidence reflects how settled the requirements are",
+    "points": 5
+  },
+  {
+    "analogues": [
+      "SYN-103",
+      "SYN-109"
+    ],
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "routine change on well-known code",
+        "tag": "familiar-application"
+      },
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      }
+    ],
+    "item_id": "SYN-121",
+    "notes": "implementation is small and the code is well known",
+    "points": 3
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "work spans another team's ownership",
+        "tag": "cross-team"
+      },
+      {
+        "reason": "mistakes in this path are expensive",
+        "tag": "operational-risk"
+      },
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      }
+    ],
+    "item_id": "SYN-122",
+    "notes": "confidence reflects how settled the requirements are",
+    "points": 3
+  },
+  {
+    "analogues": [
+      "SYN-105",
+      "SYN-111"
+    ],
+    "confidence": "low",
+    "factors": [
+      {
+        "reason": "third-party behaviour is outside the team's control",
+        "tag": "external-dependency"
+      }
+    ],
+    "item_id": "SYN-123",
+    "notes": "schedule risk sits mostly with the provider",
+    "points": 5
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      },
+      {
+        "reason": "no comparable prior work to lean on",
+        "tag": "novelty"
+      },
+      {
+        "reason": "work spans another team's ownership",
+        "tag": "cross-team"
+      }
+    ],
+    "item_id": "SYN-124",
+    "notes": "confidence reflects how settled the requirements are",
+    "points": 2
+  },
+  {
+    "analogues": [
+      "SYN-101",
+      "SYN-107"
+    ],
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "historical migrations have exceeded base estimates",
+        "tag": "migration"
+      }
+    ],
+    "item_id": "SYN-125",
+    "notes": "similar migration work has historically exceeded base estimates",
+    "points": 1
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      },
+      {
+        "reason": "requirements are still contested",
+        "tag": "ambiguity"
+      }
+    ],
+    "item_id": "SYN-126",
+    "notes": "confidence reflects how settled the requirements are",
+    "points": 8
+  },
+  {
+    "analogues": [
+      "SYN-103",
+      "SYN-109"
+    ],
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "routine change on well-known code",
+        "tag": "familiar-application"
+      },
+      {
+        "reason": "work spans another team's ownership",
+        "tag": "cross-team"
+      }
+    ],
+    "item_id": "SYN-127",
+    "notes": "implementation is small and the code is well known",
+    "points": 5
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      }
+    ],
+    "item_id": "SYN-128",
+    "notes": "estimate follows the historical pattern for this kind of work",
+    "points": 5
+  },
+  {
+    "analogues": [
+      "SYN-105",
+      "SYN-111"
+    ],
+    "confidence": "low",
+    "factors": [
+      {
+        "reason": "third-party behaviour is outside the team's control",
+        "tag": "external-dependency"
+      }
+    ],
+    "item_id": "SYN-129",
+    "notes": "schedule risk sits mostly with the provider",
+    "points": 5
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "mistakes in this path are expensive",
+        "tag": "operational-risk"
+      },
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      }
+    ],
+    "item_id": "SYN-130",
+    "notes": "implementation appears small; uncertainty is in the integration",
+    "points": 3
+  },
+  {
+    "analogues": [
+      "SYN-101",
+      "SYN-107"
+    ],
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "historical migrations have exceeded base estimates",
+        "tag": "migration"
+      },
+      {
+        "reason": "requirements are still contested",
+        "tag": "ambiguity"
+      },
+      {
+        "reason": "no comparable prior work to lean on",
+        "tag": "novelty"
+      }
+    ],
+    "item_id": "SYN-131",
+    "notes": "similar migration work has historically exceeded base estimates",
+    "points": 2
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "little team knowledge of this area",
+        "tag": "unfamiliar-subsystem"
+      }
+    ],
+    "item_id": "SYN-132",
+    "notes": "implementation appears small; uncertainty is in the integration",
+    "points": 2
+  },
+  {
+    "analogues": [
+      "SYN-103",
+      "SYN-109"
+    ],
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "routine change on well-known code",
+        "tag": "familiar-application"
+      }
+    ],
+    "item_id": "SYN-133",
+    "notes": "implementation is small and the code is well known",
+    "points": 8
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "work spans another team's ownership",
+        "tag": "cross-team"
+      },
+      {
+        "reason": "requirements are still contested",
+        "tag": "ambiguity"
+      },
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      }
+    ],
+    "item_id": "SYN-134",
+    "notes": "implementation appears small; uncertainty is in the integration",
+    "points": 5
+  },
+  {
+    "analogues": [
+      "SYN-105",
+      "SYN-111"
+    ],
+    "confidence": "low",
+    "factors": [
+      {
+        "reason": "third-party behaviour is outside the team's control",
+        "tag": "external-dependency"
+      },
+      {
+        "reason": "requirements are still contested",
+        "tag": "ambiguity"
+      }
+    ],
+    "item_id": "SYN-135",
+    "notes": "schedule risk sits mostly with the provider",
+    "points": 8
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "little team knowledge of this area",
+        "tag": "unfamiliar-subsystem"
+      },
+      {
+        "reason": "large test surface relative to the change",
+        "tag": "testing-burden"
+      },
+      {
+        "reason": "requirements are still contested",
+        "tag": "ambiguity"
+      }
+    ],
+    "item_id": "SYN-136",
+    "notes": "estimate follows the historical pattern for this kind of work",
+    "points": 3
+  },
+  {
+    "analogues": [
+      "SYN-101",
+      "SYN-107"
+    ],
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "historical migrations have exceeded base estimates",
+        "tag": "migration"
+      }
+    ],
+    "item_id": "SYN-137",
+    "notes": "similar migration work has historically exceeded base estimates",
+    "points": 2
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "work spans another team's ownership",
+        "tag": "cross-team"
+      },
+      {
+        "reason": "little team knowledge of this area",
+        "tag": "unfamiliar-subsystem"
+      }
+    ],
+    "item_id": "SYN-138",
+    "notes": "estimate follows the historical pattern for this kind of work",
+    "points": 2
+  },
+  {
+    "confidence": "medium",
+    "factors": [
+      {
+        "reason": "little team knowledge of this area",
+        "tag": "unfamiliar-subsystem"
+      }
+    ],
+    "item_id": "SYN-139",
+    "notes": "estimate follows the historical pattern for this kind of work",
+    "points": 5
+  },
+  {
+    "confidence": "high",
+    "factors": [
+      {
+        "reason": "work spans another team's ownership",
+        "tag": "cross-team"
+      },
+      {
+        "reason": "mistakes in this path are expensive",
+        "tag": "operational-risk"
+      }
+    ],
+    "item_id": "SYN-140",
+    "notes": "confidence reflects how settled the requirements are",
+    "points": 8
+  }
+]

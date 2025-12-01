@@ -1,0 +1,11 @@
+{
+  "acceptance_criteria": [
+    "Old jobs are disabled only after the new job passes monitoring checks",
+    "Rollback procedure is documented and exercised once",
+    "No gap or duplication in processed records across the cutover"
+  ],
+  "description": "The existing jobs run on the legacy scheduler and are removed only after the replacement runs cleanly for a week. The new pipeline reads the same source tables and produces byte-compatible output files. The migration runs as a series of small cutovers to keep rollback cheap. Historical data is replayed into the new system before the switch.",
+  "item_id": "SYN-101",
+  "sprint": 1,
+  "summary": "Migrate billing export jobs off the legacy scheduler"
+}

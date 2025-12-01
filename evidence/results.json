@@ -1,0 +1,149 @@
+{
+  "checks": {
+    "V1": {
+      "check": "baseline sanity",
+      "numbers": {
+        "bounds": [
+          0.5,
+          2.0
+        ],
+        "unguided_total_ratio": 1.0454545454545454
+      },
+      "pass": true
+    },
+    "V2": {
+      "check": "learning transfers",
+      "numbers": {
+        "guided_distance": 0.28787878787878785,
+        "margin": -0.24242424242424243,
+        "required": 0.05,
+        "unguided_distance": 0.045454545454545414
+      },
+      "pass": false
+    },
+    "V3": {
+      "check": "compaction",
+      "numbers": {
+        "artifact_chars": 254,
+        "artifact_fraction": 0.004955517402840643,
+        "guided_history_ratio_difference": 0.030303030303030276,
+        "history_context_chars": 51256,
+        "max_artifact_fraction": 0.2,
+        "max_ratio_difference": 0.05
+      },
+      "pass": true
+    },
+    "V4": {
+      "check": "bias recovery",
+      "numbers": {
+        "external-dependency": {
+          "guided_distance": 0.375,
+          "guided_ratio": 0.625,
+          "unguided_distance": 0.125,
+          "unguided_ratio": 0.875
+        },
+        "familiar-application": {
+          "guided_distance": 0.4,
+          "guided_ratio": 0.6,
+          "unguided_distance": 0.09999999999999998,
+          "unguided_ratio": 0.9
+        },
+        "migration": {
+          "guided_distance": 0.1875,
+          "guided_ratio": 0.8125,
+          "unguided_distance": 0.5,
+          "unguided_ratio": 1.5
+        }
+      },
+      "pass": false
+    },
+    "V5": {
+      "check": "guardrails",
+      "numbers": {
+        "estimates_in_vocabulary": "36/36",
+        "guidance_matches_recalibration": true,
+        "run_dir_files_modified_by_evaluation": 0
+      },
+      "pass": true
+    }
+  },
+  "metrics": {
+    "conditions": {
+      "guided": {
+        "actual_points": 66,
+        "estimated_points": 47,
+        "total_ratio": 0.7121212121212122
+      },
+      "history": {
+        "actual_points": 66,
+        "estimated_points": 49,
+        "total_ratio": 0.7424242424242424
+      },
+      "unguided": {
+        "actual_points": 66,
+        "estimated_points": 69,
+        "total_ratio": 1.0454545454545454
+      }
+    },
+    "per_factor": {
+      "external-dependency": {
+        "actual_points": 24,
+        "guided": {
+          "estimated_points": 15,
+          "ratio": 0.625
+        },
+        "history": {
+          "estimated_points": 13,
+          "ratio": 0.5416666666666666
+        },
+        "items": 3,
+        "unguided": {
+          "estimated_points": 21,
+          "ratio": 0.875
+        }
+      },
+      "familiar-application": {
+        "actual_points": 10,
+        "guided": {
+          "estimated_points": 6,
+          "ratio": 0.6
+        },
+        "history": {
+          "estimated_points": 9,
+          "ratio": 0.9
+        },
+        "items": 3,
+        "unguided": {
+          "estimated_points": 9,
+          "ratio": 0.9
+        }
+      },
+      "migration": {
+        "actual_points": 16,
+        "guided": {
+          "estimated_points": 13,
+          "ratio": 0.8125
+        },
+        "history": {
+          "estimated_points": 15,
+          "ratio": 0.9375
+        },
+        "items": 3,
+        "unguided": {
+          "estimated_points": 24,
+          "ratio": 1.5
+        }
+      }
+    },
+    "sizes": {
+      "artifact_chars": 254,
+      "artifact_fraction": 0.004955517402840643,
+      "history_context_chars": 51256
+    }
+  },
+  "overall": {
+    "pass": false,
+    "passed": 3,
+    "total": 5
+  }
+}
